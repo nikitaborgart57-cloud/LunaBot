@@ -1,3 +1,14 @@
+from flask import Flask
+import threading
+
+app = Flask('')
+@app.route('/')
+def home():
+    return "LunaBot is online!"
+def run_web():
+    app.run(host='0.0.0.0', port=10000)
+threading.Thread(target=run_web).start()
+
 import discord, os, asyncio
 from discord import ui
 from discord.ext import commands
